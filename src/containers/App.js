@@ -36,8 +36,25 @@ class App extends React.Component {
       imageUrl: '',
       box: {},
       route: 'signin',
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: '0',
+        name: 'john',
+        email: 'john@gmail.com',
+        entries: 0,
+        joined: new Date()
+      }
     }
+  }
+
+  loadUser = (data) => {
+    this.setState({user: {
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      entries: data.entries,
+      joined: data.joined
+    }})
   }
 
   calculateFaceLocation = (data) => {
@@ -65,7 +82,9 @@ class App extends React.Component {
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input})
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-    .then(response => this.displayFaceBox(this.calculateFaceLocation(response)))
+    .then(response => {
+      this.displayFaceBox(this.calculateFaceLocation(response))
+    })
     .catch(err => console.log(err))
   }
 
@@ -97,7 +116,7 @@ class App extends React.Component {
           : (
               this.state.route === 'signin'
               ? <Signin onRouteChange={this.onRouteChange}/>
-              : <Register />
+              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             )
         }
       </div>
