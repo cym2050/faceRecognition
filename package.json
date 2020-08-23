@@ -1,6 +1,6 @@
 {
   "name": "facerecognition",
-  "homepage": "https://cym2050.github.io/facerecognition",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
