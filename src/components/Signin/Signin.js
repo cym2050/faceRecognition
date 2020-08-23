@@ -19,7 +19,7 @@ class Signin extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
-		fetch('http://localhost:3000/signin', {
+		fetch('https://a-superstar-is-rising.herokuapp.com/signin', {
 			method: 'POST',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -74,7 +74,8 @@ class Signin extends React.Component {
 				      <input 
 				      	onClick={this.onSubmitSignIn}
 				      	className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
-				      	// type="submit" 
+						type="button" 
+						autoComplete="on"  
 				      	value="Sign in" 
 				      />
 				    </div>
