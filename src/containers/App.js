@@ -78,7 +78,8 @@ class App extends React.Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input})
-    fetch('https://a-superstar-is-rising.herokuapp.com/imageurl', {
+    // fetch('http://localhost:3000/imageurl', {   //本地
+    fetch('https://a-superstar-is-rising.herokuapp.com/imageurl', {   //线上
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -88,7 +89,8 @@ class App extends React.Component {
     .then(response => response.json())
     .then(response => {
       if (response) {
-        fetch('https://a-superstar-is-rising.herokuapp.com/image', {
+        // fetch('http://localhost:3000/image', {    //本地
+        fetch('https://a-superstar-is-rising.herokuapp.com/image', {    //线上
           method: 'PUT',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({

@@ -24,7 +24,8 @@ class Register extends React.Component {
 	}
 
 	onSubmitRegister = () => {
-		fetch('https://a-superstar-is-rising.herokuapp.com/register', {
+		// fetch('http://localhost:3000/register', {	//本地
+		fetch('https://a-superstar-is-rising.herokuapp.com/register', {		//线上
 			method: 'POST',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -79,7 +80,7 @@ class Register extends React.Component {
 				        	onChange={this.onPasswordChange}
 				        />
 				      </div>
-				      <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox" /> Remember me</label>
+				      {/* <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox" /> Remember me</label> */}
 				    </fieldset>
 				    <div className="">
 				      <input 

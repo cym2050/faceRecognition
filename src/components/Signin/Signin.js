@@ -19,7 +19,8 @@ class Signin extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
-		fetch('https://a-superstar-is-rising.herokuapp.com/signin', {
+		// fetch('http://localhost:3000/signin', {		//本地
+		fetch('https://a-superstar-is-rising.herokuapp.com/signin', {	//线上
 			method: 'POST',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
@@ -79,12 +80,12 @@ class Signin extends React.Component {
 				      	value="Sign in" 
 				      />
 				    </div>
-				    <div className="lh-copy mt3">
+				    {/* <div className="lh-copy mt3">
 				      <p onClick={() => onRouteChange('register')} href="#0" className="f6 link dim black db pointer">Register</p>
 				      {
 				      	// <a href="#0" className="f6 link dim black db">Forgot your password?</a>
 				      }
-				    </div>
+				    </div> */}
 				  </form>
 				</main>
 			</article>
